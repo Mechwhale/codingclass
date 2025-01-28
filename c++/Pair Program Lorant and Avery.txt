@@ -1,0 +1,11 @@
+// Pair Program Lorant and Avery
+#include <iostream>
+
+
+int main()
+{
+    int distance = 45; 
+    std::string destination = "cork, Ireland";
+    bool arewethereyet = true;
+    std :: cout <<"we are going to "<<destination<< ".\n";
+}
