@@ -1,0 +1,88 @@
+// Lorant Madden
+// Week 8 recap
+
+#include <iostream>
+#include <string>
+#include <stdio.h>
+#include <stdlib.h>
+#include <time.h>
+using namespace std;
+
+int response = 0;
+int attempts = 0;
+
+
+int attemptChecker(int attempts) {
+    if (attempts == 1) {
+        cout << "Woah what are you, a mind reader?\n";
+
+        return 0;
+    } else if (attempts <= 2) {
+        cout << "decent guess I suppose.\n";
+
+        return 0;
+    } else if (attempts <= 6) {
+        cout << "TOOK you long enough\n";
+
+        return 0;
+    } else if (attempts <= 9) {
+        cout << "ok that's CRAZY. I can't tell if you're insane at this or terrible";
+
+        return 0;
+    } else {
+        cout << "HOLY SHIT, I HAVE NO IDEA WHAT THE ODDS ARE THAT YOU GUESSED IT THIS LATE";
+
+        return 0;
+    }
+}
+
+int main() {
+    // cout << "Do you prefer cheese or pepperoni pizza?!\n";
+
+    // cin >> response;
+
+    // if (response == "cheese") {
+    //     cout << "that's a dogwater ass pizza you fuck\n";
+    // } else if (response == "pepperoni") {
+    //     cout << "hell yeah now we're talking\n";
+    // } else {
+    //     cout << "you... that's not a pizza fuck you.\n";
+    // }
+
+    // return 0;
+
+    
+
+
+    //guess the number game wowwoowowowowow
+
+    cout << "yo dawg, pick a number between 1 and 10\n";
+    srand(static_cast<unsigned>(time(0)));
+    int targetNumber = rand() % 10 + 1;
+    
+    cout << "hint: \n" << targetNumber << "\n";
+    
+    while (response != targetNumber) {
+        
+        cin >> response;
+
+        if (response > 10) {
+            cout << "too high, try again\n";
+        } else {
+            attempts++;
+            cout << attempts << " attempts\n";
+
+            if (response == targetNumber) {
+                attemptChecker(attempts);
+
+                return 0;
+            } else if (response > targetNumber) {
+                cout << "lower\n";
+
+            } else if (response < targetNumber) {
+                cout << "higher\n";
+            
+            }
+        }
+    }
+}
